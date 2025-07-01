@@ -8,20 +8,20 @@
        "num_workers": 16
     },
     "model": {
-        "num_layers": 8,
-        "hidden_size": 384,
+        "num_layers": 5,
+        "hidden_size": 64,
         "num_heads": 32,
-        "ffn_size": 512,
-        "head_dim": 32,
+        "ffn_size": 96,
+        "head_dim": 16,
         "use_smolgen": true,
         "enhanced_embedding": true
     },
     "training": {
         "epochs": 1,
-        "accumulation_steps": 64,
+        "accumulation_steps": 2,
         "lr": 3e-4,
-        "weight_decay": 0.05,
-        "warmup_steps": 100,
+        "weight_decay": 0.01,
+        "warmup_steps": 500,
         "lr_reduce_ratio": 50,
         "mlflow_tracking_dir": "tracking",
         "name": "chessformer_pretraining",
