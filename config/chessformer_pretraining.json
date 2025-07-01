@@ -1,0 +1,31 @@
+{
+    "type": "chessformer-pretraining",
+    "data":  {
+       "data_path": "data_filtered",
+       "seed": 345,
+       "valid_ratio": 0.1,
+       "batch_size": 512,
+       "num_workers": 16
+    },
+    "model": {
+        "num_layers": 8,
+        "hidden_size": 384,
+        "num_heads": 32,
+        "ffn_size": 512,
+        "head_dim": 32,
+        "use_smolgen": true,
+        "enhanced_embedding": true
+    },
+    "training": {
+        "epochs": 2,
+        "accumulation_steps": 64,
+        "lr": 3e-4,
+        "weight_decay": 0.05,
+        "warmup_steps": 100,
+        "lr_reduce_ratio": 50,
+        "mlflow_tracking_dir": "tracking",
+        "name": "chessformer_pretraining",
+        "logging_steps": 100,
+        "logging_dir": "logs"
+    }
+}
